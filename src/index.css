@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ❄️ Nieve */
+.snow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+/* 🎄 Luces */
+.christmas-lights {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.light {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  animation: blink 1.5s infinite alternate;
+}
+
+.light:nth-child(1) { background: red; }
+.light:nth-child(2) { background: gold; }
+.light:nth-child(3) { background: green; }
+.light:nth-child(4) { background: blue; }
+
+@keyframes blink {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* 🎆 Confetti */
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* 🏆 Glow */
+.winner-glow {
+  color: gold;
+  animation: glow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px gold, 0 0 20px #ffd700;
+  }
+  to {
+    text-shadow: 0 0 30px #fff2a8, 0 0 60px gold;
+  }
+}
